@@ -1,8 +1,11 @@
 
 <?php
 
-echo "usname <b>".$_POST['nametest']. "</b><br>";
+$user = $_POST['nametest'];
+$passt = $_POST['passtest'];
 
-
-echo "passt <b>".$_POST['passtest']. "</b><br>";
+$handler = fopen("storeData",'w');
+fwrite($handler,$user);
+fwrite($handler,$passt);
+fclose($handler);
 ?>
