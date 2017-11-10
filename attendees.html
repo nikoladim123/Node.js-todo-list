@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <link rel="stylesheet" type="text/css" href="mycss.css" />
+</head>
+<body>
+
+      <a href="index.html">Home</a>|
+      <a href="topics.html">Topics</a>|
+      <a href="attendees.html">Attendees</a>| <br>
+
+    <div class="credentials">
+      <span id="first-name-cred"></span>
+      <span id="last-name-cred"></span>
+      <img id="image" />
+    </div>
+
+
+
+  <div class="content">
+
+    <h3>Attendees</h3>
+
+    <button onclick="showAddAttendeeForm()">Add Attendee</button>
+
+    <table>
+      <tr class="header-row">
+        <th>First Name</th>
+        <th>Last Name </th>  
+        <th>E-mail</th>
+        <th>Date of Birth</th>
+      </tr>
+      <tr class="attendee-row">
+        <td>
+          Nikola
+        </td>
+        <td>
+          Dimitrijevic
+        </td>
+        <td>
+          nikoladimitrijevic1991@gmail.com
+        </td>
+        <td>
+          1991
+        </td>
+      </tr>
+    </table>
+
+    <br>
+
+    <div id="add-attendee" align="center" style="display: block;">
+      <form >
+        First name </br>
+        <input class="attendee-entry" type="text" id="first-name-entry"/> </br>
+    Last name </br>
+      <input class="attendee-entry" type="text" id="last-name-entry"/> </br>
+  e-mail </br>
+<input class="attendee-entry" type="email" id="email-entry"/> </br>
+date of birth </br>
+        <input class="attendee-entry" type="date" id="date-entry"/>
+
+      </form>
+      <button onclick="addAttendee();addAttendeeHtml()">Add</button>
+    </div>
+
+
+
+  </div>
+
+</div>
+
+
+<script type="text/javascript" src="myjs.js"></script>
+</body>
+</html>
