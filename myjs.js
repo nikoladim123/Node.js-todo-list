@@ -19,7 +19,7 @@ function setupCredentials(){
 
 function addAttendeeHtml(){
   for (let i = 0; i < attendees.length; i++){
-    if(attendee[i] == attendee.length){
+    if(attendees[i] == attendees.length){
     let attendee = attendees[i];
     addAttendeeToTable(attendee.firstName, attendee.lastName, attendee.email, attendee.dateBirth)
     }
