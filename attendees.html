@@ -23,15 +23,21 @@
 
     <h3>Attendees</h3>
 
-    <button onclick="showAddAttendeeForm()">Add Attendee</button>
+    <button onclick="showAddAttendeeForm();del()">Add Attendee</button>
 
-    <table>
-      <tr class="header-row">
-        <th>First Name</th>
-        <th>Last Name </th>  
-        <th>E-mail</th>
-        <th>Date of Birth</th>
-      </tr>
+    
+
+    
+    <table id="tableID">
+      
+      <tr class="attendee-row">
+        <td><h4>First Name</h3></td>
+        <td><h4>Last Name </h3></td>  
+        <td><h4>E-mail</h3></td>
+        <td><h4>Date of Birth</h3></td>
+        <td><h4>Action</h3></td>
+    </tr>
+      
       <tr class="attendee-row">
         <td>
           Nikola
@@ -47,7 +53,19 @@
         </td>
       </tr>
     </table>
-
+    <div id="blaa" style="display:none">
+    <form>
+        Edit First name </br>
+        <input  type="text"/> </br>
+        Edit Last name </br>
+        <input  type="text"/> </br>
+        Edit e-mail </br>
+        <input  type="email"/> </br>
+        Edit date of birth </br>
+        <input  type="date"/> <br>
+    </form>
+        <button id="editCommit" onclick="hideForm()">commit</button>
+   </div>
     <br>
 
     <div id="add-attendee" align="center" style="display: block;">
