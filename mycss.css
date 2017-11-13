@@ -12,6 +12,7 @@ table{
   border-radius: 7px;
 }
 td{
+  padding-right:25px;
   height: 45px;
   text-align: center;
   border-radius: 5px;
@@ -33,6 +34,10 @@ button{
   border: none;
   height: 25px;
   border-radius: 5px 5px 20px 20px;
+  transition: all 0.5s;
+}
+button:hover{
+  background-color: purple;
 }
 a{
   text-decoration: none;
@@ -56,4 +61,15 @@ img{
 }
 input{
   border-radius: 7px;
+}
+#butEdit1{
+  color:red;
+  float:right;
+}
+#butDel1{
+  color:red;
+  float:right
+}
+#blaa{
+  float:right;
 }
