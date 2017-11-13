@@ -1,10 +1,11 @@
+
 let firstName = 'Nikola'
 let lastName = 'Dimitrijevic'
 let imageUrl = 'http://i0.wp.com/cdn.techgyd.com/save-whatsapp-profile-picture-image3.jpg?resize=337%2C337'
 
 let attendees = [
-  { firstName: 'obj1 Fname', lastName: 'ob1 Lame', email: 'obj1 @', dateBirth: 'obj1 date' },
-  { firstName: 'obj2 pera', lastName: 'ob2 lazic', email: 'obj2 test@test', dateBirth: '13/12' },
+  { firstName: "obj1 pera", lastName: "ob2 c", email: "obj2 test@t", dateBirth: "13/12"},
+  { firstName: "obj2 pera", lastName: "ob2 lazic2", email: "obj2 test@t", dateBirth: "13/12"},
 ];
 
 function setupCredentials(){
@@ -24,7 +25,7 @@ function addAttendeeHtml(){
     addAttendeeToTable(attendee.firstName, attendee.lastName, attendee.email, attendee.dateBirth)
     }
   }
-}
+} 
 
 
 function showAddAttendeeForm(){
@@ -47,11 +48,11 @@ function addAttendee(){
 }
 
 function addAttendeeToTable(firstName, lastName, email, dateOfBirth) {
-   let foundTables = document.getElementsByTagName('table');
+   let foundTables = document.getElementById("tableID");
    if (foundTables.length < 1) throw 'No table found';
 
   // pristup elementu table koj je u nizu:  index [0]
-   let table = foundTables[0];
+   let table = foundTables;
    let tr = document.createElement('tr');
    let firstNameCell = document.createElement('td'),
      firstNameText = document.createTextNode(firstName);
@@ -67,13 +68,33 @@ function addAttendeeToTable(firstName, lastName, email, dateOfBirth) {
 
    let dateCell = document.createElement('td'),
       dateText = document.createTextNode(dateOfBirth);
+    dateCell.appendChild(dateText);
+  
+  let buttonDel = document.createElement("button");
+  buttonDel.addEventListener("click", del());
+  buttonDel.className ="butDel"
+    buttonTxtDel = document.createTextNode("delete");
+  buttonDel.appendChild(buttonTxtDel);
+  
+  let buttonEdit = document.createElement("button");
+    buttonEdit.onclick = function(){
+  var foredit = document.getElementById("blaa");
+  foredit.style.display ="block";
+};
+  buttonEdit.id = "butEdit"
+    buttonTxtEdit = document.createTextNode("Edit");
+  buttonEdit.appendChild(buttonTxtEdit);
 
-  dateCell.appendChild(dateText);
+  
 
+   
    tr.appendChild(firstNameCell)
    tr.appendChild(lastNameCell)
    tr.appendChild(emailCell)
    tr.appendChild(dateCell)
+   tr.appendChild(buttonDel)
+   tr.appendChild(buttonEdit)
+   
 
    table.appendChild(tr)
 
@@ -86,6 +107,33 @@ function setupTable(){
   }
 }
 
+function hideForm(){
+  var foredit = document.getElementById("blaa");
+  foredit.style.display ="none";
+}
+
+var ind;
+function del(){
+  var tableID = document.getElementById("tableID");
+ var g = document.getElementsByClassName('butDel');
+  
+for (var i = 0, len = g.length; i < len; i++)
+{
+
+    (function(index){
+        g[i].onclick = function(){
+          ind = index + 1;
+          alert("object at index " + index + " has been deleted"); 
+          attendees.splice(index, 1);
+          tableID.removeChild(tableID.childNodes[ind+1]);
+          
+        }
+        
+    })(i);
+  }
+}
+
 
 setupCredentials();
-setupTable();
+setupTable(); 
+del(); 
