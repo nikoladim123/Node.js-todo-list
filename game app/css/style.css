@@ -1,0 +1,35 @@
+body{
+  background-image: url("../images/pozadina.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.containerr{
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  min-height: 15px;
+  padding-top: 3%;
+}
+
+.btn{
+  margin-right: 2%;
+  font-size: 15px;
+}
+
+.butt{
+  display: none;
+  position:relative;
+  top: 30px;
+  left: 50%;
+  width:50px;
+  height:100px;
+  margin-top: -25px; /*set to a negative number 1/2 of your height*/
+  margin-left: -50px; /*set to a negative number 1/2 of your width*/
+}
+
+/*
+transform: translate(-50%, -50%)
+*/
